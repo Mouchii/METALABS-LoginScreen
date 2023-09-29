@@ -47,6 +47,7 @@ public class LoginGUI extends javax.swing.JFrame {
         Button1 = new javax.swing.JButton();
         Button2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Cbox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -119,26 +120,36 @@ public class LoginGUI extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metalabsgui/Small METALABS LOGO 1 Loop.gif"))); // NOI18N
 
+        Cbox1.setForeground(new java.awt.Color(255, 255, 255));
+        Cbox1.setText("Show Password");
+        Cbox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cbox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                        .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Label2)
-                    .addComponent(TxtField1)
-                    .addComponent(Label3)
-                    .addComponent(PassField1))
-                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(139, 139, 139))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cbox1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                            .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Label2)
+                        .addComponent(TxtField1)
+                        .addComponent(Label3)
+                        .addComponent(PassField1)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +164,9 @@ public class LoginGUI extends javax.swing.JFrame {
                 .addComponent(Label3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PassField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Cbox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,6 +230,17 @@ public class LoginGUI extends javax.swing.JFrame {
          Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metalabsgui/STUDENT LOGIN(SELECTED).png")));
     }//GEN-LAST:event_Button1MouseReleased
 
+    private void Cbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cbox1ActionPerformed
+        // TODO add your handling code here:
+        if (Cbox1.isSelected()){
+            PassField1.setEchoChar((char)0);
+        } else {
+            PassField1.setEchoChar('\u2022');
+        }
+        
+        
+    }//GEN-LAST:event_Cbox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +259,7 @@ public class LoginGUI extends javax.swing.JFrame {
               Label3.setForeground(new Color(255,255,255,x++));
               Button2.setBackground(new Color(255,255,255,x++));
               Button1.setBackground(new Color(255,255,255,x++));
+              Cbox1.setForeground(new Color(255,255,255,x++));
               
               if (x == 255){
                   timer.stop();
@@ -259,6 +284,7 @@ public class LoginGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton Button1;
     public static javax.swing.JButton Button2;
+    public static javax.swing.JCheckBox Cbox1;
     public static javax.swing.JLabel Label2;
     public static javax.swing.JLabel Label3;
     public static javax.swing.JPasswordField PassField1;
